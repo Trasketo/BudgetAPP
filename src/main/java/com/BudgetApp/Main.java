@@ -1,4 +1,4 @@
-package org.example;
+package com.BudgetApp;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -18,25 +18,9 @@ public class Main {
         String username = "Trasketo";
         String password = "your_password";
 
-
-        FileInputStream fileStream = null;
-        try {
-            fileStream = new FileInputStream("src/main/resources/application.properties");
-            System.out.println("File opened successfully.");
-
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found: " + e.getMessage());
-        }
-
-        Properties properties = new Properties();
-        try{
-            properties.load(fileStream);
-        }catch (IOException e)
-        {
-
-        }
-
-        String URL = properties.getProperty("URL");
+       DatabaseConfig databaseConfig = new DatabaseConfig();
+        databaseConfig.setDatabaseUrl("jdbc:mysql://192.168.12.88:3306");
+        String URL = databaseConfig.getDatabaseUrl();
 
         System.out.println(URL);
 
@@ -47,6 +31,7 @@ public class Main {
             // Check if the connection is successful
             if (connection != null) {
                 System.out.println("Connected to MySQL database!");
+
                 // Close the connection
                 connection.close();
             }
