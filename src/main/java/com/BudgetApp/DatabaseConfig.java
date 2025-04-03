@@ -38,4 +38,22 @@ public class DatabaseConfig {
         properties.setProperty("database.url", newUrl);
         saveProperties();
     }
+
+    public String getDatabaseUser(){
+        return properties.getProperty("database.user");
+    }
+
+    public void setDatabaseUser(String user){
+        properties.setProperty("database.user",user);
+        saveProperties();
+    }
+
+    public String getDatabasePassword(){
+        return properties.getProperty("database.password");
+    }
+    
+    public void setDatabasePassword(String password){
+        properties.setProperty("database.password",password);
+        saveProperties();
+    }
 }
