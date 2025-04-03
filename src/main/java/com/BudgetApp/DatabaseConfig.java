@@ -51,7 +51,7 @@ public class DatabaseConfig {
     public String getDatabasePassword(){
         return properties.getProperty("database.password");
     }
-    
+
     public void setDatabasePassword(String password){
         properties.setProperty("database.password",password);
         saveProperties();
