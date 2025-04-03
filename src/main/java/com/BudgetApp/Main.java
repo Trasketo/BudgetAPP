@@ -17,7 +17,7 @@ public class Main {
         String url = "jdbc:mysql://192.168.12.88:3306";
         String username = "Trasketo";
         String password = "your_password";
-        // teste comment53
+        // teste comment53tes
 
        DatabaseConfig databaseConfig = new DatabaseConfig();
         databaseConfig.setDatabaseUrl("jdbc:mysql://192.168.12.88:3306");
